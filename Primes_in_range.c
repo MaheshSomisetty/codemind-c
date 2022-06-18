@@ -22,7 +22,6 @@ int main()
 		if(flag==0)
 			c++;
 	}
-	printf("%d
-",c);
+	printf("%d",c);
 	
 }
