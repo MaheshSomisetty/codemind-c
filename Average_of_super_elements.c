@@ -1,0 +1,60 @@
+#include<stdio.h>
+int main()
+{
+    int a[100],b[100],i,j,c=0,l,n,m=0;
+    float s;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        l=0;
+        for(j=0;j<n;j++)
+        {
+            if(a[i]==a[j])
+            {
+                l++;
+            }
+        }
+        if(l==a[i])
+        {
+            b[c]=l;
+            c++;
+        }
+    }
+    l=0;
+    for(i=0;i<c;i++)
+    {
+        if(b[i]==0)
+        {
+            m++;
+        }
+    }
+    n=0;
+    for(i=0;i<c;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            if(b[i]==b[j] && i!=j)
+            {
+                b[i]=0;
+            }
+        }
+        if(b[i]!=0)
+        {
+            n++;
+            l+=b[i];
+        }
+    }
+    s=l/float(n);
+    if(m==c)
+    {
+        printf("-1");
+    }
+    else
+    {
+        printf("%.2f",s);
+    }
+}
